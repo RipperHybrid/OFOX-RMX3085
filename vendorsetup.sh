@@ -22,7 +22,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export LC_ALL="C"
 
 	# Maintaining Info
-	export OF_MAINTAINER="BloodCorrupt"
+	export OF_MAINTAINER=AshBorn
 	export FOX_VERSION=$(date +%y.%m.%d)
 	export FOX_BUILD_TYPE=Unofficial-Beta
 	
@@ -72,11 +72,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_PATCH_AVB20=1
 	export OF_NO_SPLASH_CHANGE=0
 	export OF_PATCH_VBMETA_FLAG=2
+        export OF_FLASHLIGHT_ENABLE=0
 	export FOX_INSTALLER_DISABLE_AUTOREBOOT=1
         export FOX_ENABLE_APP_MANAGER=1
-	export OF_FLASHLIGHT_ENABLE=0
-
- 
+	
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
 		export | grep "FOX" >> $FOX_BUILD_LOG_FILE
