@@ -28,6 +28,7 @@
 
 ## Credits
 - Thanks [Crypton](https://t.me/cd_Crypton)
+- Thanks [BloodCorrupt](https://t.me/BloodCorruption) For OFOX.
 - https://github.com/TeamWin
 - https://github.com/minimal-manifest-twrp
 - And to all Contributors in every repositories.
