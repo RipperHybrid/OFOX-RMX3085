@@ -133,8 +133,8 @@ jobs:
         name: Unofficial OrangeFox for ${{ github.event.inputs.REALME_UI_VERSION }} ${{ github.event.inputs.DEVICE_NAME }} // ${{ env.BUILD_DATE }}
         tag_name: ${{ github.run_id }}
         body: |
-        Build: fox_${{ github.event.inputs.MANIFEST_BRANCH }}
-        Device: ${{ github.event.inputs.DEVICE_TREE }}/tree/${{ github.event.inputs.DEVICE_TREE_BRANCH }}
-        RUI_Version: ${{ github.event.inputs.REALME_UI_VERSION }}
-        Target: ${{ github.event.inputs.BUILD_TARGET }}.img
-        Status: Tested And Working 
+             Build: fox_${{ github.event.inputs.MANIFEST_BRANCH }}
+             Device: ${{ github.event.inputs.DEVICE_TREE }}/tree/${{ github.event.inputs.DEVICE_TREE_BRANCH }}
+             RUI_Version: ${{ github.event.inputs.REALME_UI_VERSION }}
+             Target: ${{ github.event.inputs.BUILD_TARGET }}.img
+             Status: Tested And Working 
