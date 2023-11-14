@@ -123,11 +123,6 @@ jobs:
             exit 1
         fi
 
-    - name: Modify File Name
-      run: |
-          mv OrangeFox/fox_${{ github.event.inputs.MANIFEST_BRANCH }}/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/OrangeFox*.img workspace/out/target/product/RMX3085/OrangeFox-${{ github.event.inputs.REALME_UI_VERSION }}*.img
-          mv OrangeFox/fox_${{ github.event.inputs.MANIFEST_BRANCH }}/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/OrangeFox*.zip workspace/out/target/product/RMX3085/OrangeFox-${{ github.event.inputs.REALME_UI_VERSION }}*.zip
-          
     - name: Upload to Release
       if: env.CHECK_IMG_IS_OK == 'true' && env.CHECK_ZIP_IS_OK == 'true'
       uses: softprops/action-gh-release@v1
@@ -135,10 +130,11 @@ jobs:
         files: |
           OrangeFox/fox_${{ github.event.inputs.MANIFEST_BRANCH }}/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/OrangeFox*.img
           OrangeFox/fox_${{ github.event.inputs.MANIFEST_BRANCH }}/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/OrangeFox*.zip
-        name: Unofficial OrangeFox for RUI3 ${{ github.event.inputs.DEVICE_NAME }} // ${{ env.BUILD_DATE }}
+        name: Unofficial OrangeFox for ${{ github.event.inputs.REALME_UI_VERSION }} ${{ github.event.inputs.DEVICE_NAME }} // ${{ env.BUILD_DATE }}
         tag_name: ${{ github.run_id }}
         body: |
         Build: fox_${{ github.event.inputs.MANIFEST_BRANCH }}
         Device: ${{ github.event.inputs.DEVICE_TREE }}/tree/${{ github.event.inputs.DEVICE_TREE_BRANCH }}
+        RUI_Version: ${{ github.event.inputs.REALME_UI_VERSION }}
         Target: ${{ github.event.inputs.BUILD_TARGET }}.img
         Status: Tested And Working 
