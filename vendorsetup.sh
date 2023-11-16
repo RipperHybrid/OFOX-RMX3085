@@ -75,6 +75,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         export OF_FLASHLIGHT_ENABLE=0
 	export FOX_INSTALLER_DISABLE_AUTOREBOOT=1
         export FOX_ENABLE_APP_MANAGER=1
+	export OF_DONT_KEEP_LOG_HISTORY=1
 	
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
