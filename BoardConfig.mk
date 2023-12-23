@@ -180,6 +180,7 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_CUSTOM_BATTERY_PATH := "/sys/devices/platform/charger/power_supply/battery/capacity"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
 TW_NO_SCREEN_BLANK := true
