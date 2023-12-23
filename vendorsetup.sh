@@ -18,8 +18,8 @@ fi
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# Initial Exports
 	export ALLOW_MISSING_DEPENDENCIES=true
-    export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
-    export LC_ALL="C"
+        export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
+        export LC_ALL="C"
 
 	# Maintaining Info
 	export OF_MAINTAINER="AshBorn"
@@ -76,6 +76,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_INSTALLER_DISABLE_AUTOREBOOT=1
         export FOX_ENABLE_APP_MANAGER=1
 	export OF_DONT_KEEP_LOG_HISTORY=1
+        export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
+        export OF_CHECK_OVERWRITE_ATTEMPTS=1
+	export OF_LOOP_DEVICE_ERRORS_TO_LOG=1
 	
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
