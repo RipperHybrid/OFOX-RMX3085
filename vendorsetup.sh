@@ -54,8 +54,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 	# Partitions Handling
 	export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/by-name/recovery"
-	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/dm-0"
-	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/dm-1"
+	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
+	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
 	export FOX_RECOVERY_BOOT_PARTITION="/dev/block/by-name/boot"
 
 	# Other OrangeFox Vars
