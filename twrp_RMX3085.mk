@@ -24,6 +24,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/twrp/config/common.mk)
 
+PRODUCT_DEVICE := nigga
 PRODUCT_NAME := twrp_RMX3085
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX3085
