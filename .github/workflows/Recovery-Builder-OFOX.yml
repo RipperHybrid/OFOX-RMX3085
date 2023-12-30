@@ -20,6 +20,7 @@ on:
       DEVICE_TREE:
       description: 'Custom Recovery Tree'
       required: true
+      default: ''
       type: choice
       options:
           - 'https://github.com/RipperHybrid/OFOX-RMX3085'
