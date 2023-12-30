@@ -18,9 +18,12 @@ on:
         required: true
         default: '12.1'
       DEVICE_TREE:
-        description: 'Custom Recovery Tree'
-        required: true
-        default: 'https://github.com/AshBorn0119/OFOX-RMX3085'
+      description: 'Custom Recovery Tree'
+      required: true
+      type: choice
+      options:
+          - 'https://github.com/RipperHybrid/OFOX-RMX3085'
+          - 'https://github.com/AshBorn0119/OFOX-RMX3085'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
