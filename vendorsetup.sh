@@ -18,18 +18,18 @@ fi
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# Initial Exports
 	export ALLOW_MISSING_DEPENDENCIES=true
-        export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
-        export LC_ALL="C"
+    export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
+    export LC_ALL="C"
 
 	# Maintaining Info
 	export OF_MAINTAINER="AshBorn"
 	export FOX_VERSION=$(date +%y.%m.%d)
-	export FOX_BUILD_TYPE=Unofficial-Beta
+	export FOX_BUILD_TYPE=Unofficial
 	
 	# Device Information
 	export FOX_ARCH=arm64
 	export FOX_VARIANT="A12.1"
-	export TARGET_DEVICE_ALT="RMX3085,RMX3085.ossi,RMX3085L1,RMX3085T2,nashc"
+	export TARGET_DEVICE_ALT="RMX3085,ossi,RMX3085L1,RMX3085T2,nashc"
 
 	# Funtions
 	export FOX_REPLACE_BUSYBOX_PS=1
@@ -74,13 +74,13 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_PATCH_VBMETA_FLAG=2
         export OF_FLASHLIGHT_ENABLE=0
 	export FOX_INSTALLER_DISABLE_AUTOREBOOT=1
-        export FOX_ENABLE_APP_MANAGER=1
 	export OF_DONT_KEEP_LOG_HISTORY=1
-        export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
-        export OF_CHECK_OVERWRITE_ATTEMPTS=1
-	export OF_LOOP_DEVICE_ERRORS_TO_LOG=1
-        export OF_KEEP_DM_VERITY=1
-	export OF_SKIP_ORANGEFOX_PROCESS=1
+        export OF_FBE_METADATA_MOUNT_IGNORE=1
+	export OF_OTA_BACKUP_STOCK_BOOT_IMAGE=1
+        export FOX_DELETE_INITD_ADDON=1
+        export OF_LOOP_DEVICE_ERRORS_TO_LOG=1
+	export OF_DISPLAY_FORMAT_FILESYSTEMS_DEBUG_INFO=1
+        export FOX_BASH_TO_SYSTEM_BIN=1
 	
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
