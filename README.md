@@ -19,7 +19,7 @@
 - External Storage (SD and OTG)
 
 ## Bugs
-- Flashlight Won't Work In Recovery.
+- Failed To Unmount Vendor (Rarely).
 
 
 ## Device Support Group 
@@ -28,8 +28,7 @@
 
 ## Credits
 - Thanks [Crypton](https://t.me/cd_Crypton)
-- Thanks [BloodCorrupt](https://t.me/BloodCorruption) For OFOX.
-- Thanks To The Testers For Testing It [Alpha](https://t.me/alpha_ripr),[Howwof](https://t.me/HowWof),[Pizza](https://t.me/Monster6x)
+- Thanks To The Testers For Testing It [Alpha](https://t.me/alpha_ripaaah),[Howwof](https://t.me/HowWof),[Pizza](https://t.me/Monster6x)
 - https://github.com/TeamWin
 - https://github.com/minimal-manifest-twrp
 - And to all Contributors in every repositories.
