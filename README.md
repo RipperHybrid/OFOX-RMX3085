@@ -20,6 +20,7 @@
 
 ## Bugs
 - Failed To Unmount Vendor (Rarely).
+- Flashlight Won't Work In Recovery.
 
 
 ## Device Support Group 
