@@ -48,6 +48,12 @@ on:
         description: 'BUILD_TARGET'
         required: true
         default: 'recovery'
+      RELEASE_OR_ARTIFACT:
+        required: true
+        type: choice
+        options:
+          - 'release'
+          - 'artifact'
 
 jobs:
   build:
@@ -140,3 +146,31 @@ jobs:
              RUI_Version: ${{ github.event.inputs.REALME_UI_VERSION }}
              Target: ${{ github.event.inputs.BUILD_TARGET }}.img
              Status: Tested And Working 
+
+    - name: Upload to Release or Create Artifact
+      if: ${{ github.event.inputs.RELEASE_OR_ARTIFACT == 'release' && env.CHECK_IMG_IS_OK == 'true' && env.CHECK_ZIP_IS_OK == 'true' }}
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          OrangeFox/fox_${{ github.event.inputs.MANIFEST_BRANCH }}/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/OrangeFox*.img
+          OrangeFox/fox_${{ github.event.inputs.MANIFEST_BRANCH }}/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/OrangeFox*.zip
+        name: Unofficial OrangeFox for ${{ github.event.inputs.REALME_UI_VERSION }} ${{ github.event.inputs.DEVICE_NAME }} // ${{ env.BUILD_DATE }}
+        tag_name: ${{ github.run_id }}
+        body: |
+          Manifest: ${{ github.event.inputs.MANIFEST_BRANCH }}
+          Device: ${{ github.event.inputs.DEVICE_NAME }}
+          RUI_Version: ${{ github.event.inputs.REALME_UI_VERSION }}
+          Target: ${{ github.event.inputs.BUILD_TARGET }}.img
+          Status: Tested & Working.
+          **Troubleshooting:**
+          If you encounter any issues during the installation:
+          - Logs: Include detailed logs when reporting problems.
+          - Community Support: Visit our [community forum](https://t.me/Realme8AOSPGroup) for assistance.
+
+    - name: Create Artifact
+      if: ${{ github.event.inputs.RELEASE_OR_ARTIFACT == 'artifact' && env.CHECK_IMG_IS_OK == 'true' && env.CHECK_ZIP_IS_OK == 'true' }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: recovery-artifact
+        path: OrangeFox/fox_${{ github.event.inputs.MANIFEST_BRANCH }}/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/OrangeFox*.zip
+        compression-level: 9
