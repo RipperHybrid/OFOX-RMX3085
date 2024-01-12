@@ -1,0 +1,13 @@
+#!/system/bin/sh
+
+# Get the current value of ota.firmware.restriction
+current_value=$(getprop ota.firmware.restriction)
+
+# Check if the current value is False
+if [ "$current_value" = "False" ]; then
+    # Change the property to True using resetprop
+    resetprop ota.firmware.restriction True
+    echo "Property updated successfully! You can now flash OTA zips."
+else
+    echo "Property is already set to True. You can already flash OTA zips."
+fi
