@@ -26,8 +26,10 @@ on:
                  - 'https://github.com/AshBorn0119/OFOX-RMX3085'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
-        required: true
-        default: 'OFOX-A12'
+        type: choice
+        options:
+                 - 'OFOX-A12'
+                 - 'OFOX-RUI'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
