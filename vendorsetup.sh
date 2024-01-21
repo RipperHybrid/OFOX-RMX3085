@@ -29,6 +29,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# Device Information
 	export FOX_ARCH=arm64
 	export FOX_VARIANT="A12.1"
+        export TARGET_DEVICE_ALT="RMX3085,ossi,RMX3085L1,nashc"
 
 	# Funtions
 	export FOX_REPLACE_BUSYBOX_PS=1
