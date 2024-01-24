@@ -22,7 +22,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export LC_ALL="C"
 
 	# Maintaining Info
-	export OF_MAINTAINER="AshBorn"
+	export OF_MAINTAINER="Blood Corrupt"
 	export FOX_VERSION=$(date +%y.%m.%d)
 	export FOX_BUILD_TYPE=Unofficial
 	
@@ -70,7 +70,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_NO_RELOAD_AFTER_DECRYPTION=1
 	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800"; # Tuesday, January 1, 2019 12:00:00 AM GMT+00:00
 	export OF_PATCH_AVB20=1
-	export OF_NO_SPLASH_CHANGE=0
+	export OF_NO_SPLASH_CHANGE=1
 	export OF_PATCH_VBMETA_FLAG=2
         export OF_FLASHLIGHT_ENABLE=0
 	export FOX_INSTALLER_DISABLE_AUTOREBOOT=1
